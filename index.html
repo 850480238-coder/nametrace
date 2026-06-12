@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Name Tracing Worksheet Generator – Free Printable Tracing Sheets</title>
+  <meta name="description" content="Create free printable name tracing worksheets in seconds. Type any name, choose print or cursive fonts, then print. No sign-up, no watermark. Perfect for preschool and kindergarten." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400;700&family=Schoolbell&family=Playwrite+US+Trad:wght@400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Is this name tracing generator really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up required. You can generate and print unlimited worksheets at no cost. There are no watermarks on the printed pages."}},
+      {"@type":"Question","name":"What age is name tracing for?","acceptedAnswer":{"@type":"Answer","text":"Name tracing is ideal for children aged 3–6 years, typically in preschool and kindergarten. It helps develop fine motor skills and letter recognition."}},
+      {"@type":"Question","name":"Can I make tracing worksheets for full sentences?","acceptedAnswer":{"@type":"Answer","text":"You can enter multiple words, one per line, and each will get its own practice section. For long sentences, use Small letter size."}},
+      {"@type":"Question","name":"What paper size should I use?","acceptedAnswer":{"@type":"Answer","text":"US Letter is standard for American classrooms. Switch to A4 if you're outside the US — both are supported."}},
+      {"@type":"Question","name":"Why does my child need guide lines?","acceptedAnswer":{"@type":"Answer","text":"The three-line guide teaches correct letter proportions — tall letters reach the top line, short letters stay between mid and base."}},
+      {"@type":"Question","name":"Do you store the names I type?","acceptedAnswer":{"@type":"Answer","text":"No. Everything happens entirely in your browser. Names are never sent to any server and are not stored anywhere."}}
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #14b8a6;
+      --teal-dark: #0f766e;
+      --teal-light: #f0fdfa;
+      --coral: #f97316;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --white: #ffffff;
+      --paper: #fffef9;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-800);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--slate-100);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.1rem; color: var(--slate-800); text-decoration: none; }
+    header nav a { color: var(--slate-500); text-decoration: none; font-size: 0.85rem; margin-left: 20px; }
+    header nav a:hover { color: var(--teal-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--teal-light) 0%, var(--slate-50) 100%);
+      padding: 36px 20px 28px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 800;
+      color: var(--slate-800);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .hero p { color: var(--slate-500); font-size: 1rem; line-height: 1.5; }
+    .hero p strong { color: var(--teal-dark); }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 14px; }
+    .badge {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      color: var(--slate-500);
+      box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    }
+
+    /* ── TOOL LAYOUT ── */
+    .tool-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 900px) {
+      .tool-wrapper { grid-template-columns: 320px 1fr; align-items: start; }
+      .settings-panel { position: sticky; top: 16px; }
+    }
+
+    /* ── SETTINGS PANEL ── */
+    .settings-panel {
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid var(--slate-100);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .field label, .field .field-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--slate-700);
+      margin-bottom: 6px;
+    }
+    textarea, select {
+      width: 100%;
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      color: var(--slate-800);
+      background: var(--white);
+      outline: none;
+      resize: none;
+      transition: border-color .15s;
+    }
+    textarea:focus, select:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(20,184,166,.15); }
+    .hint { font-size: 0.72rem; color: var(--slate-400); margin-top: 4px; }
+
+    .btn-group { display: flex; gap: 6px; }
+    .btn-seg {
+      flex: 1;
+      padding: 8px 4px;
+      border-radius: 10px;
+      border: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--slate-100);
+      color: var(--slate-600);
+      transition: background .15s, color .15s;
+    }
+    .btn-seg.active { background: var(--teal); color: var(--white); }
+
+    /* range */
+    input[type=range] { width: 100%; accent-color: var(--teal); }
+    .range-labels { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--slate-400); margin-top: 2px; }
+
+    /* toggle */
+    .toggle-row { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+    .toggle-track {
+      width: 40px; height: 22px;
+      background: var(--slate-200);
+      border-radius: 999px;
+      position: relative;
+      transition: background .2s;
+      flex-shrink: 0;
+      border: none;
+      cursor: pointer;
+    }
+    .toggle-track.on { background: var(--teal); }
+    .toggle-thumb {
+      position: absolute;
+      top: 2px; left: 2px;
+      width: 18px; height: 18px;
+      background: var(--white);
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,.2);
+      transition: transform .2s;
+    }
+    .toggle-track.on .toggle-thumb { transform: translateX(18px); }
+    .toggle-label { font-size: 0.85rem; color: var(--slate-700); }
+
+    /* action buttons */
+    .btn-print {
+      width: 100%;
+      padding: 14px;
+      background: var(--teal);
+      color: var(--white);
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .btn-print:hover { background: var(--teal-dark); }
+    .btn-pdf {
+      width: 100%;
+      padding: 10px;
+      background: var(--white);
+      color: var(--teal-dark);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border: 1.5px solid var(--teal);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .btn-pdf:hover { background: var(--teal-light); }
+    .btn-pdf small { display: block; font-weight: 400; font-size: 0.72rem; color: var(--slate-400); margin-top: 2px; }
+
+    /* ── PREVIEW AREA ── */
+    .preview-scroll { overflow-x: auto; }
+    #worksheet {
+      background: var(--paper);
+      box-shadow: 0 4px 32px rgba(0,0,0,.10);
+      border-radius: 8px;
+      padding: 48px;
+      width: 816px; /* US Letter at 96dpi */
+      min-height: 600px;
+      display: block;
+    }
+    #worksheet.a4 { width: 794px; }
+
+    .empty-hint {
+      color: var(--slate-400);
+      font-size: 1rem;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    /* ── AD SLOTS ── */
+    .ad-slot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 728px;
+      height: 90px;
+      margin: 8px auto;
+      border: 1.5px dashed var(--slate-200);
+      border-radius: 8px;
+      color: var(--slate-400);
+      font-size: 0.75rem;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .section { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .section h2 { font-size: 1.4rem; font-weight: 800; text-align: center; margin-bottom: 24px; }
+    .steps { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 600px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step {
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid var(--slate-100);
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .step-icon { font-size: 2.2rem; margin-bottom: 10px; }
+    .step h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 6px; }
+    .step p { font-size: 0.82rem; color: var(--slate-500); line-height: 1.55; }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; max-width: 740px; margin: 0 auto; }
+    details {
+      background: var(--white);
+      border: 1px solid var(--slate-100);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    summary {
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--slate-800);
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary .arrow { color: var(--slate-400); transition: transform .2s; font-size: 0.8rem; }
+    details[open] summary .arrow { transform: rotate(180deg); }
+    .faq-ans { padding: 0 20px 16px; font-size: 0.85rem; color: var(--slate-500); line-height: 1.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--slate-100);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--slate-400);
+    }
+    footer a { color: var(--teal-dark); text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── PRINT ── */
+    @media print {
+      header, .hero, .badges, .settings-panel, .ad-slot,
+      .section, footer, .no-print { display: none !important; }
+      body { background: white; }
+      .tool-wrapper { display: block; padding: 0; }
+      .preview-scroll { overflow: visible; }
+      #worksheet {
+        width: 100% !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0.4in !important;
+      }
+      .word-block { page-break-inside: avoid; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">✏️ NameTrace</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#privacy">Privacy</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Free Name Tracing Worksheet Generator</h1>
+    <p>Type any name → preview instantly → print.<br><strong>Made for parents and teachers.</strong><br><span style="font-size:.85rem;color:var(--slate-400)">Works for sight words and spelling practice too.</span></p>
+    <div class="badges">
+      <span class="badge">✅ No sign-up</span>
+      <span class="badge">✅ No watermark</span>
+      <span class="badge">✅ Prints clean</span>
+      <span class="badge">✅ Free forever</span>
+    </div>
+  </section>
+
+  <!-- Tool -->
+  <div class="tool-wrapper">
+    <!-- Settings -->
+    <aside class="settings-panel no-print">
+
+      <div class="field">
+        <label for="word-input">Name or Word</label>
+        <textarea id="word-input" rows="3" placeholder="Type a name or word…">Emma</textarea>
+        <p class="hint">One word per line → separate section each</p>
+      </div>
+
+      <div class="field">
+        <label for="font-select">Font Style</label>
+        <select id="font-select">
+          <option value="'Edu QLD Beginner', cursive">Queensland (Recommended)</option>
+          <option value="'Schoolbell', cursive">Schoolbell</option>
+          <option value="'Playwrite US Trad', cursive">Cursive (US Traditional)</option>
+          <option value="'Georgia', serif">Classic Print</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Letter Size</div>
+        <div class="btn-group">
+          <button class="btn-seg" data-group="size" data-val="small">Small</button>
+          <button class="btn-seg active" data-group="size" data-val="medium">Medium</button>
+          <button class="btn-seg" data-group="size" data-val="large">Large</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Letter Case</div>
+        <div class="btn-group">
+          <button class="btn-seg active" data-group="casemode" data-val="mixed">Emma</button>
+          <button class="btn-seg" data-group="casemode" data-val="upper">EMMA</button>
+          <button class="btn-seg" data-group="casemode" data-val="lower">emma</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Practice Lines: <strong id="lines-val">4</strong></div>
+        <input type="range" id="lines-range" min="1" max="8" value="4" />
+        <div class="range-labels"><span>1</span><span>8</span></div>
+      </div>
+
+      <div class="field" style="display:flex;flex-direction:column;gap:12px">
+        <label class="toggle-row">
+          <button class="toggle-track on" data-toggle="guideLines" aria-pressed="true">
+            <span class="toggle-thumb"></span>
+          </button>
+          <span class="toggle-label">Show guide lines</span>
+        </label>
+        <label class="toggle-row">
+          <button class="toggle-track on" data-toggle="startDots" aria-pressed="true">
+            <span class="toggle-thumb"></span>
+          </button>
+          <span class="toggle-label">Show starting dots</span>
+        </label>
+        <label class="toggle-row">
+          <button class="toggle-track on" data-toggle="solidFirst" aria-pressed="true">
+            <span class="toggle-thumb"></span>
+          </button>
+          <span class="toggle-label">First line: solid example</span>
+        </label>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Paper Size</div>
+        <div class="btn-group">
+          <button class="btn-seg active" data-group="paper" data-val="letter">US Letter</button>
+          <button class="btn-seg" data-group="paper" data-val="a4">A4</button>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:8px;padding-top:4px">
+        <button class="btn-print" onclick="window.print()">🖨️ Print Worksheet</button>
+        <button class="btn-pdf" onclick="window.print()">
+          ⬇️ Download PDF
+          <small>Choose "Save as PDF" in the print dialog</small>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Preview -->
+    <div class="preview-scroll">
+      <div id="worksheet" role="img" aria-label="Worksheet preview">
+        <p class="empty-hint">Type a name above to preview your worksheet</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad slot 1 -->
+  <div class="ad-slot no-print" id="ad-below-tool">
+    <!-- AdSense: replace this div content with your <ins> tag
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         style="display:block" data-ad-format="auto" -->
+    Advertisement
+  </div>
+
+  <!-- How it works -->
+  <section class="section no-print">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">⌨️</div>
+        <h3>1. Type a name</h3>
+        <p>Enter any name or word. Add multiple lines for extra practice words.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">⚙️</div>
+        <h3>2. Customize</h3>
+        <p>Choose letter size, font, case, and how many practice lines. Preview updates instantly.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">🖨️</div>
+        <h3>3. Print</h3>
+        <p>Click Print. Only the clean worksheet appears — no buttons, no ads. Or save as PDF.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad slot 2 -->
+  <div class="ad-slot no-print" id="ad-above-faq">
+    <!-- AdSense slot -->
+    Advertisement
+  </div>
+
+  <!-- FAQ -->
+  <section class="section no-print">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Is this name tracing generator really free? <span class="arrow">▾</span></summary>
+        <p class="faq-ans">Yes, completely free with no sign-up required. You can generate and print unlimited worksheets at no cost. There are no watermarks on the printed pages.</p>
+      </details>
+      <details>
+        <summary>What age is name tracing for? <span class="arrow">▾</span></summary>
+        <p class="faq-ans">Name tracing is ideal for children aged 3–6 years, typically in preschool and kindergarten. It helps develop fine motor skills and letter recognition at a crucial stage of development.</p>
+      </details>
+      <details>
+        <summary>Can I make tracing worksheets for full sentences? <span class="arrow">▾</span></summary>
+        <p class="faq-ans">You can enter multiple words, one per line, and each will get its own practice section. For very long sentences, use Small letter size so all words fit on one page.</p>
+      </details>
+      <details>
+        <summary>What paper size should I use? <span class="arrow">▾</span></summary>
+        <p class="faq-ans">US Letter (8.5″ × 11″) is the standard for American classrooms and home printers. If you're outside the US, switch to A4 in the settings panel. Both sizes are supported.</p>
+      </details>
+      <details>
+        <summary>Why does my child need guide lines? <span class="arrow">▾</span></summary>
+        <p class="faq-ans">The three-line guide (top, mid, and baseline) teaches correct letter proportions — tall letters reach the top line, short letters stay between mid and base. This builds the muscle memory children need for consistent handwriting.</p>
+      </details>
+      <details>
+        <summary>Do you store the names I type? <span class="arrow">▾</span></summary>
+        <p class="faq-ans">No. Everything happens entirely in your browser. Names and words you type are never sent to any server and are not stored anywhere. The worksheet is generated locally on your device.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="no-print">
+  <span>© <span id="yr"></span> NameTrace. Free for personal &amp; classroom use.</span><br style="margin-bottom:8px">
+  <a href="#about">About</a>
+  <a href="#privacy">Privacy Policy</a>
+  <a href="mailto:hello@nametrace.app">Contact</a>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// ── State ──
+const state = {
+  text: 'Emma',
+  fontFamily: "'Edu QLD Beginner', cursive",
+  size: 'medium',
+  casemode: 'mixed',
+  lines: 4,
+  guideLines: true,
+  startDots: true,
+  solidFirst: true,
+  paper: 'letter',
+};
+
+const SIZE = {
+  small:  { fontSize: 48, lineH: 68 },
+  medium: { fontSize: 66, lineH: 94 },
+  large:  { fontSize: 86, lineH: 120 },
+};
+const PAPER_W = { letter: 816, a4: 794 };
+const PADDING = 48;
+
+function applyCase(word) {
+  if (state.casemode === 'upper') return word.toUpperCase();
+  if (state.casemode === 'lower') return word.toLowerCase();
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
+// ── Render ──
+function render() {
+  const ws = document.getElementById('worksheet');
+  ws.className = state.paper === 'a4' ? 'a4' : '';
+  const paperW = PAPER_W[state.paper];
+  ws.style.width = paperW + 'px';
+
+  const words = state.text.split('\n')
+    .map(w => w.trim()).filter(w => w.length > 0)
+    .map(applyCase);
+
+  if (!words.length) {
+    ws.innerHTML = '<p class="empty-hint">Type a name above to preview your worksheet</p>';
+    return;
+  }
+
+  const { fontSize, lineH } = SIZE[state.size];
+  const contentW = paperW - PADDING * 2;
+  const totalLines = state.lines + (state.solidFirst ? 1 : 0);
+
+  let html = '';
+  for (const word of words) {
+    const svgH = totalLines * lineH + 16;
+    let svgLines = '';
+
+    for (let li = 0; li < totalLines; li++) {
+      const isSolid = state.solidFirst && li === 0;
+      const y = li * lineH + lineH * 0.82;
+      const topY = li * lineH + 8;
+      const midY = li * lineH + lineH * 0.5 + 4;
+      const botY = li * lineH + lineH - 4;
+
+      // Guide lines
+      if (state.guideLines) {
+        svgLines += `
+          <line x1="0" y1="${topY}" x2="${contentW}" y2="${topY}" stroke="#d1d5db" stroke-width="1"/>
+          <line x1="0" y1="${midY}" x2="${contentW}" y2="${midY}" stroke="#d1d5db" stroke-width="0.8" stroke-dasharray="4 4"/>
+          <line x1="0" y1="${botY}" x2="${contentW}" y2="${botY}" stroke="#d1d5db" stroke-width="1"/>`;
+      }
+
+      // Text
+      const esc = word.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      if (isSolid) {
+        svgLines += `<text x="${contentW/2}" y="${y}" text-anchor="middle"
+          font-family="${state.fontFamily.replace(/"/g,"'")}" font-size="${fontSize}"
+          fill="#b0b8c4" paint-order="stroke">${esc}</text>`;
+      } else {
+        svgLines += `<text x="8" y="${y}" text-anchor="start"
+          font-family="${state.fontFamily.replace(/"/g,"'")}" font-size="${fontSize}"
+          fill="none" stroke="#b0b8c4" stroke-width="1.5"
+          stroke-dasharray="4 3" stroke-linecap="round" stroke-linejoin="round">${esc}</text>`;
+
+        // Starting dots
+        if (state.startDots) {
+          const approxCharW = fontSize * 0.62;
+          for (let ci = 0; ci < word.length; ci++) {
+            const dotX = 8 + ci * approxCharW + 2;
+            const dotY = topY + lineH * 0.18;
+            svgLines += `<circle cx="${dotX}" cy="${dotY}" r="4" fill="#f87171" opacity="0.85"/>`;
+          }
+        }
+      }
+    }
+
+    html += `<div class="word-block" style="margin-bottom:20px">
+      <svg width="${contentW}" height="${svgH}" viewBox="0 0 ${contentW} ${svgH}"
+           xmlns="http://www.w3.org/2000/svg" style="display:block"
+           aria-label="Tracing lines for: ${word.replace(/"/g,'&quot;')}">
+        ${svgLines}
+      </svg>
+    </div>`;
+  }
+  ws.innerHTML = html;
+}
+
+// ── Controls ──
+document.getElementById('word-input').addEventListener('input', e => {
+  state.text = e.target.value;
+  render();
+});
+
+document.getElementById('font-select').addEventListener('change', e => {
+  state.fontFamily = e.target.value;
+  render();
+});
+
+document.getElementById('lines-range').addEventListener('input', e => {
+  state.lines = +e.target.value;
+  document.getElementById('lines-val').textContent = state.lines;
+  render();
+});
+
+// Segmented buttons
+document.querySelectorAll('.btn-seg').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const group = btn.dataset.group;
+    document.querySelectorAll(`.btn-seg[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state[group] = btn.dataset.val;
+    if (group === 'lines') state.lines = +btn.dataset.val;
+    render();
+  });
+});
+
+// Toggles
+document.querySelectorAll('.toggle-track').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.toggle;
+    state[key] = !state[key];
+    btn.classList.toggle('on', state[key]);
+    btn.setAttribute('aria-pressed', state[key]);
+    render();
+  });
+});
+
+// Initial render
+render();
+</script>
+</body>
+</html>
